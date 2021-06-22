@@ -2,11 +2,10 @@ import os
 import csv
 from collections import Counter
 
-os.system('clear')
 
 # Specify the filepath of input and output files
 csvpath = os.path.join("Resources","election_data.csv")
-output_path = os.path.join("Analysis","Analysis.txt")
+output_path = os.path.join("Analysis","Polling Analysis.txt")
 
 
 # Lists to store data

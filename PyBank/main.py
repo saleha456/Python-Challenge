@@ -1,11 +1,10 @@
 import os
 import csv
 
-os.system('clear')
 
 #Specify the filepath of input and output files
 csvpath = os.path.join("Resources","budget_data.csv")
-output_path = os.path.join("Analysis","Analysis.txt")
+output_path = os.path.join("Analysis","Financial Analysis.txt")
 
 # Lists to store data
 month = []
@@ -77,7 +76,6 @@ summary_analysis = (
 
 # Print Analysis to Terminal
 print(summary_analysis)
-
 
 
 # Save analysis as text file
