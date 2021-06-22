@@ -34,11 +34,11 @@ with open(csvpath) as csvfile:
 		candidate.append(row[2])
 
 
-# Get total votes
+# Get the Total Number of Votes
 total_votes = len(voterid)
 
 
-# Get total votes per candidate
+# Get Total Votes per Candidate
 candidate_votes = Counter((candidate))
 
 candidate1_results = candidate_votes[candidate1]
@@ -54,13 +54,14 @@ candidate4_results = candidate_votes[candidate4]
 candidate4_perc	= "{:.3%}".format(candidate4_results / total_votes)
 
 
-#Determine winner
+
+# Determine the winner
 winner = candidate_votes.most_common(1)
 
 
+# Write out Summary Analysis
 
-
-print(
+summary_analysis = (
 	"Election Results \n"
 	"----------------------------\n"
 	f"Total Votes: {total_votes}\n"
@@ -72,23 +73,15 @@ print(
 	"----------------------------\n"
 	f"Winner: {winner}\n"
 	"----------------------------\n"
-
 	)
 
 
+# Print Summary Analysis
+print(summary_analysis)
 
 
-# Save analysis as text file
+
+# Save Analysis as Text File
 output_file = open(output_path,'w')
-output_file.write(
-	"Election Results \n"
-	"----------------------------\n"
-	f"Total Votes: {total_votes}\n"
-	"----------------------------\n"
-	f"{candidate1}: {candidate1_perc} ({candidate1_results}) \n"
-	f"{candidate2}: {candidate2_perc} ({candidate2_results}) \n"
-	f"{candidate3}: {candidate3_perc} ({candidate3_results}) \n"
-	f"{candidate4}: {candidate4_perc} ({candidate4_results}) \n"
-
-	)
+output_file.write(summary_analysis)
 

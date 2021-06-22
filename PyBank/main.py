@@ -38,12 +38,13 @@ with open(csvpath) as csvfile:
 
 
 
-#Calculate Total Number of Months and Total Profit	
+# Calculate Total Profit	
 netprofitloss = sum(profitloss)
 
+# Calculatee Total Number of Months 
 totalmonths = len(month)
 
-#Get min and max value from Profit Change list
+# Get Min and Max value from Profit Change list
 greatestincrease = max(profitchange)
 max_index = profitchange.index(greatestincrease)
 max_month = month[max_index]
@@ -53,9 +54,9 @@ min_index = profitchange.index(greatestdecrease)
 min_month = month[min_index]
 
 
-##### Get Average Change in Profit ########################
+# Calculate Average Change in Profit ########################
 #Replace first value/index in ProfitChange list with 0 
-#Divide the sum of ProfitChange list by the number of months, but subtract 1 from total months to exlude first instance
+#Divide the sum of ProfitChange list by Total Number of Months (exluding first month)
 profitchange[0] = 0
 num_rows = totalmonths - 1
 averagechange = round(float(sum(profitchange) / num_rows),2)
