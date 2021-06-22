@@ -12,7 +12,7 @@ output_path = os.path.join("Analysis","Polling Analysis.txt")
 voterid = []
 candidate = []
 
-# Assign candidate names as variables
+# Assign variables for candidate names
 candidate1 = "Khan"
 candidate2 = "Correy"
 candidate3 = "Li"
@@ -25,7 +25,7 @@ with open(csvpath) as csvfile:
 	next(csvreader) #skip header
 
 
-	#Append data from each row to all 3 lists
+	# Append data from each row to lists
 	for row in csvreader:
 		voterid.append(row[0])
 		candidate.append(row[2])
@@ -79,7 +79,7 @@ summary_analysis = (
 	)
 
 
-# Print Summary Analysis
+# Print Summary Analysis to Terminal
 print(summary_analysis)
 
 
