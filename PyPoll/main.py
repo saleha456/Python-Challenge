@@ -11,7 +11,6 @@ output_path = os.path.join("Analysis","Analysis.txt")
 
 # Lists to store data
 voterid = []
-county = []
 candidate = []
 
 # Assign candidate names as variables
@@ -30,7 +29,6 @@ with open(csvpath) as csvfile:
 	#Append data from each row to all 3 lists
 	for row in csvreader:
 		voterid.append(row[0])
-		county.append(row[1])
 		candidate.append(row[2])
 
 
@@ -56,7 +54,13 @@ candidate4_perc	= "{:.3%}".format(candidate4_results / total_votes)
 
 
 # Determine the winner
-winner = candidate_votes.most_common(1)
+
+key_list = list(candidate_votes.keys())
+val_list = list(candidate_votes.values())
+winner_votes = max(val_list)
+winner_index = val_list.index(winner_votes)
+winner_name = key_list[winner_index]
+
 
 
 # Write out Summary Analysis
@@ -71,7 +75,7 @@ summary_analysis = (
 	f"{candidate3}: {candidate3_perc} ({candidate3_results}) \n"
 	f"{candidate4}: {candidate4_perc} ({candidate4_results}) \n"
 	"----------------------------\n"
-	f"Winner: {winner}\n"
+	f"Winner: {winner_name}\n"
 	"----------------------------\n"
 	)
 
