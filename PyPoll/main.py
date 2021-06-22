@@ -70,19 +70,12 @@ print(
 	f"{candidate3}: {candidate3_perc} ({candidate3_results}) \n"
 	f"{candidate4}: {candidate4_perc} ({candidate4_results}) \n"
 	"----------------------------\n"
-	f"Winner: {total_votes}\n"
+	f"Winner: {winner}\n"
 	"----------------------------\n"
 
 	)
 
 
-
-#print(f"Total Votes: {total_votes}")
-#print(candidate_votes)
-#print(f"Winner: {winner}")
-#print(candidate_votes["Correy"])
-#print(type(candidate_votes))
-#print(cand1perc)
 
 
 # Save analysis as text file
@@ -99,11 +92,3 @@ output_file.write(
 
 	)
 
-
-
-
-#cnt = Counter()
-#>>> for word in ['red', 'blue', 'red', 'green', 'blue', 'blue']:
-#...     cnt[word] += 1
-#>>> cnt
-#Counter({'blue': 3, 'red': 2, 'green': 1})

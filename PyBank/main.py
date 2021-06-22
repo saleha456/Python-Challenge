@@ -61,20 +61,9 @@ num_rows = totalmonths - 1
 averagechange = round(float(sum(profitchange) / num_rows),2)
 
 
-#Print results to terminal
-print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {totalmonths}")
-print(f"Total: ${netprofitloss}")
-print(f"Average Change: ${averagechange}")
-print(f"Greatest Increase in Profits: {max_month} (${greatestincrease})")
-print(f"Greatest Decrease in Profits: {min_month} (${greatestdecrease})")
+# Write out analysis to be printed
 
-
-
-# Save analysis as text file
-output_file = open(output_path,'w')
-output_file.write(
+summary_analysis = (
 	"Financial Analysis \n"
 	"----------------------------\n"
 	f"Total Months: {totalmonths}\n"
@@ -83,3 +72,13 @@ output_file.write(
 	f"Greatest Increase in Profits: {max_month} (${greatestincrease})\n"
 	f"Greatest Decrease in Profits: {min_month} (${greatestdecrease})\n"
 	)
+
+
+# Print Analysis to Terminal
+print(summary_analysis)
+
+
+
+# Save analysis as text file
+output_file = open(output_path,'w')
+output_file.write(summary_analysis)
